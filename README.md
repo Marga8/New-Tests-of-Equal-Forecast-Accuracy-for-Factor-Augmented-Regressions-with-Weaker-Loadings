@@ -82,34 +82,53 @@ Likewise, for Figure 2 and Figure 3 for the forecast accuracy test G2 and G3, th
 Similarly goes for Figure 4, for the forecast accuracy test G4: the curves correspond to the values in column 2,3,4 -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},4}^{adj}$)- of OA Table 5.13. (Note how for G4 the tables are shorter as there is no $\lambda_2^0$).
 
 The exact same process is to obtain Figure 5-8 for the case of cross-sectional dependent idiosyncratics (I), and Figure 9-12 for the case of cross-sectional dependent idiosyncratics plus GARCH(1, 1) forecast errors (II). 
-The values to impute to the relevant lines of the provided R scripts should now be taken from the corresponding columns in Table 5.41 for G1, Table 5.42 for G2, Table 5.43 for G3 and Table 5.44 for G4, for (I). Likewise, from the corresponding columns in Table 5.45 for G1, Table 5.46 for G2, Table 5.47 for G3 and Table 5.48 for G4, for (II).
+The values to impute to the relevant lines of the provided R scripts should now be taken from the corresponding columns in Table 5.41-5.43 for G1, Table 5.45-5.47 for G2, Table 5.49-5.51 for G3 and Table 5.53-5.55 for G4, for (I). Likewise, from the corresponding columns in Table 5.57-5.59 for G1, Table 5.61-5.63 for G2, Table 5.65-5.67 for G3 and Table 5.69-5.71 for G4, for (II).
 
-Note again that the R scripts provided have pre-imputed values to reproduce Figure 1-4. To reproduce Figure 5-12 for the cases of cross-sectional dependent idiosyncratics and cross-sectional dependent idiosyncratics plus GARCH(1, 1) forecast errors, the values should be imputed as explained above.
+Note again that the R scripts provided have pre-imputed values to reproduce Figure 1-4 only. To reproduce Figure 5-12 for the cases of cross-sectional dependent idiosyncratics and cross-sectional dependent idiosyncratics plus GARCH(1, 1) forecast errors, the values should be imputed as explained above.
 
-We now proceed to explain how to precisely obtain all the tables reported in the OA, Section 5.2 ("Size and Power Tables"), Section 5.3 ("Sensitivity to Smaller Sample Sizes") and Section 5.4 (Cross-sectional dependent idiosyncratics and Garch errors for heterogeneous loadings)
+We now proceed to explain how to precisely obtain all the tables reported in the OA, Section 5.2 ("Size and Power Tables"), Section 5.3 ("Sensitivity to Smaller Sample Sizes") and Section 5.4 (Cross-sectional dependent idiosyncratics and Garch errors for homogeneous and heterogeneous loadings)
 
+OA Section 5.2 ("Size and Power Tables"):
+---------------
 
+- Table 5.1-5.4 are obtained by running the script SIMULATIONS_G1.M and modifying the line 13 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
-
-
-
-
-
-
-
-
+- Table 5.5-5.12 are obtained by running the script SIMULATIONS_G2_G3.M and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
+  
+- Table 5.13-5.16 are obtained by running the script SIMULATIONS_G4.M and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
 
+OA Section 5.3 ("Sensitivity to Smaller Sample Sizes"):
+---------------
+
+- Table 5.17-5.22 are obtained by running the script SIMULATIONS_G1.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2
+
+- Table 5.23-5.34 are obtained by running the script SIMULATIONS_G2_G3.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2
+
+- Table 5.35-5.40 are obtained by running the script SIMULATIONS_G4.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2
+
+
+OA Section 5.3 ("Cross-sectional dependent idiosyncratics and Garch errors for homogeneous and heterogeneous loadings"):
+---------------
+Here Subsection 5.4.1 is about Cross sectional dependent idiosyncratic only. That means, no GARCH effects on the error. This means that for all the scripts below there is a section to be commented out (lines 91-106 for G2,G3,G4) and one to be un-commented out (lines 111-112 for G2,G3,G4). This is clearly commented within the code! 
+
+- Table 5.41-5.44 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
+
+- Table 5.45-5.52 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
+
+- Table 5.53-5.56 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
 
 
+Here Subsection 5.4.2 is about Cross sectional dependent idiosyncratic plus GARCH effects on the error. This means that for all the scripts below the same sections commented out to obtain the results in Subsection 5.4.1 above should now be uncommented again.
 
+- Table 5.57-5.60 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
+- Table 5.61-5.68 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
+- Table 5.69-5.72 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
-
-
-
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # EMPIRICAL APPLICATION I: Inflation Forecasting
 
