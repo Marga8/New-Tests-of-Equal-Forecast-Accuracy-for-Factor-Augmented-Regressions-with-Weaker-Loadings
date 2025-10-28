@@ -25,9 +25,9 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - pred_encompass_dnorm.M
 - NbFactors.M
 - standard.M
-- andrews_lrv.M
-- armaxfilter_simulate.M
-- covnw.M
+- (andrews_lrv.M)
+- (armaxfilter_simulate.M)
+- (covnw.M)
 ---------------------------------------------
 # Main Scripts Simulations G2, G3, G4
 - SIMULATIONS_G2_G3.M
@@ -43,9 +43,9 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - Nested_Stats_Sbar_g4.M
 - NbFactors.M
 - standard.M
-- armaxfilter_simulate.M
-- covnw.M
-- varsim.M
+- (armaxfilter_simulate.M)
+- (covnw.M)
+- (varsim.M)
 ---------------------------------------------
 # Main Scripts Empirical Application I
 - Application_HCPIQ_AR1.M
@@ -67,7 +67,48 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - 2024-07.xlsx
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
+# REPRODUCIBILITY OF RESULTS:
+
 # MONTE CARLO SIMULATIONS
+_______________________________________________________________________________________________________________
+To obtain the Power curve plots in Figure 1-4 of the MP, we use the R scripts Plot_Rscript_G1.R-Plot_Rscript_G4.R;
+Note that the imput values are simply taken from the relevant columns of the full blown simulations reported in OA, Section 5.2. 
+In fact, all the figures (Figure 1-12) are visualization summaries of the overall simulations reported in OA Section 5.2 and 5.4.
+
+For example: take Figure 1, which is for the encompassing test G1 with $mu_0=0.4$, then the 3 plotted curves of color blue, green and orange, correspond to column 4 (the one for $mu_0=0.4$) of Table 5.1, 5.2, 5.3 in the OA. 
+
+Likewise, for Figure 2 and Figure 3 for the forecast accuracy test G2 and G3, the curves correspond to the values in column 5 (the one for $\lmbda_2^0=0.65$) -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},2}^{adj}$, $g_{\widehat{f},3}^{adj}$)- of OA Table 5.5, 5.6, 5.7 and Table 5.9, 5.10, 5.11, respectively.
+
+Similarly goes for Figure 4, for the forecast accuracy test G4: the curves correspond to the values in column 2,3,4 -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},4}^{adj}$)- of OA Table 5.13. (Note how for G4 the tables are shorter as there is no $\lambda_2^0$).
+
+The exact same process is to obtain Figure 5-8 for the case of cross-sectional dependent idiosyncratics (I), and Figure 9-12 for the case of cross-sectional dependent idiosyncratics plus GARCH(1, 1) forecast errors (II). 
+The values to impute to the relevant lines of the provided R scripts should now be taken from the corresponding columns in Table 5.41 for G1, Table 5.42 for G2, Table 5.43 for G3 and Table 5.44 for G4, for (I). Likewise, from the corresponding columns in Table 5.45 for G1, Table 5.46 for G2, Table 5.47 for G3 and Table 5.48 for G4, for (II).
+
+Note again that the R scripts provided have pre-imputed values to reproduce Figure 1-4. To reproduce Figure 5-12 for the cases of cross-sectional dependent idiosyncratics and cross-sectional dependent idiosyncratics plus GARCH(1, 1) forecast errors, the values should be imputed as explained above.
+
+We now proceed to explain how to precisely obtain all the tables reported in the OA, Section 5.2 ("Size and Power Tables"), Section 5.3 ("Sensitivity to Smaller Sample Sizes") and Section 5.4 (Cross-sectional dependent idiosyncratics and Garch errors for heterogeneous loadings)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # EMPIRICAL APPLICATION I: Inflation Forecasting
