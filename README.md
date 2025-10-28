@@ -77,7 +77,7 @@ In fact, all the figures (Figure 1-12) are visualization summaries of the overal
 
 For example: take Figure 1, which is for the encompassing test G1 with $mu_0=0.4$, then the 3 plotted curves of color blue, green and orange, correspond to column 4 (the one for $mu_0=0.4$) of Table 5.1, 5.2, 5.3 in the OA. 
 
-Likewise, for Figure 2 and Figure 3 for the forecast accuracy test G2 and G3, the curves correspond to the values in column 5 (the one for $\lmbda_2^0=0.65$) -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},2}^{adj}$, $g_{\widehat{f},3}^{adj}$)- of OA Table 5.5, 5.6, 5.7 and Table 5.9, 5.10, 5.11, respectively.
+Likewise, for Figure 2 and Figure 3 for the forecast accuracy test G2 and G3, the curves correspond to the values in column 5 (the one for $\lambda_2^0=0.65$) -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},2}^{adj}$, $g_{\widehat{f},3}^{adj}$)- of OA Table 5.5, 5.6, 5.7 and Table 5.9, 5.10, 5.11, respectively.
 
 Similarly goes for Figure 4, for the forecast accuracy test G4: the curves correspond to the values in column 2,3,4 -for the lower part (the one for the power-enhanced tests $g_{\widehat{f},4}^{adj}$)- of OA Table 5.13. (Note how for G4 the tables are shorter as there is no $\lambda_2^0$).
 
