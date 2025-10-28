@@ -55,6 +55,19 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - Application_FREDMD.M
   
 # Auxiliary Functions 
+For both Empirical Applications the auxiliary functions are simply the same auxiliary functions above for G1,G2,G3,G4 combined, as all of them are used.
+For Empirical Application II a couple of additional auxiliary functions are needed to take care of the usual (stationarity) transformation of FRED-MD (zip file with these have been downloaded from https://www.stlouisfed.org/research/economists/mccracken/fred-databases) plus a couple of others for trying different method of extracting factors.
+
+These are:
+- transform_data.M
+- seqa.M
+- remove_outliers.M
+- prepare_missing.M
+- mrsq.M
+- fredfactors.M
+- factors_em.M
+- AH_crit.M
+- ABC_crit.M
 ----------------------------------------------
 # R Scripts
 - Plot_Rscript_G1.R
@@ -128,6 +141,9 @@ Here Subsection 5.4.2 is about Cross sectional dependent idiosyncratic plus GARC
 
 - Table 5.69-5.72 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1];
 
+
+
+NOTE: all simulations have been run locally on the author machine, and the code only contains parloops to parallelize the tasks. The settings with N_vec=[800]; T_vec=[500]; for 500 replications are lengthy, and the main culprit for this lenghty-ness is the time dimension T_vec as the factors are estimated at every roll of the out-of-sample window (recursively). G1 seems a bit slower than G2-G4. On a processor Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz  2.30 GHz with installed RAM of 32 GB, the whole simulation of G1 takes about 3.5-4 hours.
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # EMPIRICAL APPLICATION I: Inflation Forecasting
