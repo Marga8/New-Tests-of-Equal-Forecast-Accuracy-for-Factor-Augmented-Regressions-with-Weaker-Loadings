@@ -55,8 +55,7 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - Application_FREDMD.M
   
 # Auxiliary Functions 
-For both Empirical Applications the auxiliary functions are basically the same auxiliary functions within the simulations above for G1,G2,G3,G4 combined. However, some tiny changes are required, e.g., in Application II to impose $\lambda_1^0=0.6$ for G4 within Nested_Stats_Sbar_g4.M. And also, for Empirical Application II a couple of additional auxiliary functions are needed to take care of the usual (stationarity) transformation of FRED-MD (zip file with these have been downloaded from https://www.stlouisfed.org/research/economists/mccracken/fred-databases) plus a couple of others for trying different method of extracting factors. Thus, we recommend downloading the whole folder for each application when replicating it.
-
+For both Empirical Applications the auxiliary functions are basically the same auxiliary functions within the simulations above for G1,G2,G3,G4 combined. However, some tiny changes are required, e.g., in Application II to impose $\lambda_1^0=0.6$ for G4 within Nested_Stats_Sbar_g4.M. And also, for Empirical Application II a couple of additional auxiliary functions are needed to take care of the usual (stationarity) transformation of FRED-MD (zip file with these have been downloaded from https://www.stlouisfed.org/research/economists/mccracken/fred-databases) plus a couple of others for trying different method of extracting factors. 
 These are:
 - transform_data.M
 - seqa.M
@@ -67,6 +66,8 @@ These are:
 - factors_em.M
 - AH_crit.M
 - ABC_crit.M
+
+Thus, we recommend downloading the whole folder for each application when replicating it.
 ----------------------------------------------
 # R Scripts
 - Plot_Rscript_G1.R
