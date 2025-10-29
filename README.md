@@ -4,6 +4,7 @@ In this README file we explain in details how to reproduce both the simulations 
 
 The programming language employed is predominantly MATLAB, with some R codes only to produce the graphs in the main paper. 
 The main bodies of the MATLAB scripts are taken and modified directly from the original scripts of J.Y. Pitarakis (see his two repos: https://github.com/jpitarakis/Predictive-Accuracy-Comparisons-Nested and https://github.com/jpitarakis/Multi-Step_Encompassing) who was the original mind behind the tests of forecasting accuracy and encompassing (see also [2], [3]).
+All results have been obtained using the MATLAB version R2023a Update 1 (9.14.0.2239454), 64-bit (win64), March 30, 2023.
 
 
 Throughout, we refer to our main paper in [1] as MP and to its online appendix as OA.
