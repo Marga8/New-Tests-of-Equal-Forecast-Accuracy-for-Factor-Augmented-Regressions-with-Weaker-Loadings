@@ -76,7 +76,7 @@ These are:
 ----------------------------------------------
 # Data Files
 - WB_HCPI_Q.xlsx
-- 2024-07.xlsx
+- 2024-07.csv
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
 # REPRODUCIBILITY OF RESULTS:
@@ -151,14 +151,16 @@ ________________________________________________________________________________
 Note for reproducing the Empirical Applications below, dowload locally the entire folder APPLICATION_I or APPLICATION_II. 
 
 # EMPIRICAL APPLICATION I: Inflation Forecasting
+To reproduce Table 4.1 in the MP, the script to be used is Application_HCPIQ_AR1.M, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
+The code prints to the console the p-values of the four tests G1-G4 for the 23 countries taken into account (note: the name of the table is encompass_Q_stats but it actually contains the p-values not the test statistics).
 
+Similarly, to reproduce Table 6.1 in Section 6 of the OA the script to be used is Application_HCPIQ_AR1_GRANDAVERAGE.M, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
+The code prints to the console the p-values of the four tests G1-G4 for the 23 countries taken into account (note: the name of the table is encompass_Q_stats but it actually contains the p-values not the test statistics).
 
 # EMPIRICAL APPLICATION II: FRED-MD Forecasting
-To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.M, and the data file employed is 2024-07.xlsx (already within the APPLICATION II folder).
+To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.M, and the data file employed is 2024-07.csv (already within the APPLICATION II folder).
 To obtain results for the different 14 series is enough to modify line 170: idx = find(strcmp('XXXXX', series)); replacing XXXXX with either UNRATE, CPIAUCSL, DPCERA3M086SBEA, S&P 500, PAYEMS, INDPROTB3SMFFM, HOUST, M1SL, M2SL, OILPRICExGS10, RPI, BUSLOANS.
 The script prints to the console both test statistics and p-values of G1, G2, G3, G4. Table 4.2 in the MP reports only the p-values.
-
-
 
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
