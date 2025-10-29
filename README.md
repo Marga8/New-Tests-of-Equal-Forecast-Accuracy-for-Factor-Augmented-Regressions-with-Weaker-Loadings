@@ -148,12 +148,15 @@ This means that for all the scripts below the same sections commented out to obt
 NOTE: all simulations have been run locally on the authors machine, and the code only contains parloops to parallelize the tasks. The settings with N_vec=[800]; T_vec=[500]; for 500 replications are lengthy, and the main culprit for this lenghty-ness is the time dimension T_vec as the factors are estimated at every roll of the out-of-sample window (recursively). G1 seems a bit slower than G2-G4. On a processor Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz  2.30 GHz with installed RAM of 32 GB, the whole simulation of G1 takes about 3.5-4 hours. Needless to say, to reproduce exactly the results the scripts -and random number generators thereof- should not be modified (e.g., the snippet ensuring reproducible random number generation in parallel loops -line 47-51 for SIMULATIONS_G1.M and similarly everywhere else- should be left as-is!).
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+Note for reproducing the Empirical Applications below, dowload locally the entire folder APPLICATION_I or APPLICATION_II. 
+
 # EMPIRICAL APPLICATION I: Inflation Forecasting
 
 
 # EMPIRICAL APPLICATION II: FRED-MD Forecasting
-
-
+To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.M, and the data file employed is 2024-07.xlsx (already within the APPLICATION II folder).
+To obtain results for the different 14 series is enough to modify line 170: idx = find(strcmp('XXXXX', series)); replacing XXXXX with either UNRATE, CPIAUCSL, DPCERA3M086SBEA, S&P 500, PAYEMS, INDPROTB3SMFFM, HOUST, M1SL, M2SL, OILPRICExGS10, RPI, BUSLOANS.
+The script prints to the console both test statistics and p-values of G1, G2, G3, G4. Table 4.2 in the MP reports only the p-values.
 
 
 
