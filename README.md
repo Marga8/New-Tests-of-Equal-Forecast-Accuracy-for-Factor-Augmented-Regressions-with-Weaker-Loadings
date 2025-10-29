@@ -82,6 +82,9 @@ Thus, we recommend downloading the whole folder for each application when replic
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
 # REPRODUCIBILITY OF RESULTS:
 
+To reproduce every graph/table in the MP it is enough to download the whole repository as .zip file, then work on either the folder "SIMULATIONS" to reproduce the Monte Carlo exercises or the folders "APPLICATION_I" and "APPLICATION_II" to reproduce the empirical applications.
+Below, we give the exact instructions.
+
 # MONTE CARLO SIMULATIONS
 _______________________________________________________________________________________________________________
 To obtain the Power curve plots in Figure 1-4 of the MP, we use the R scripts Plot_Rscript_G1.R-Plot_Rscript_G4.R;
