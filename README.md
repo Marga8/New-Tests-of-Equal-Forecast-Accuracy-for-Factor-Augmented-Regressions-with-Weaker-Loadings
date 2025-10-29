@@ -161,7 +161,7 @@ The code prints to the console the p-values of the four tests G1-G4 for the 23 c
 # EMPIRICAL APPLICATION II: FRED-MD Forecasting
 To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.M, and the data file employed is 2024-07.csv (already within the APPLICATION II folder).
 To obtain results for the different 14 series is enough to modify line 170: idx = find(strcmp('XXXXX', series)); replacing XXXXX with either UNRATE, CPIAUCSL, DPCERA3M086SBEA, S&P 500, PAYEMS, INDPROTB3SMFFM, HOUST, M1SL, M2SL, OILPRICExGS10, RPI, BUSLOANS.
-The script prints to the console both test statistics and p-values of G1, G2, G3, G4. Table 4.2 in the MP reports only the p-values.
+The script prints to the console both test statistics and p-values of G1, G2, G3, G4. Table 4.2 in the MP reports only the p-values rounded at the third decimal.
 
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
