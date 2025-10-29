@@ -1,0 +1,79 @@
+# Load the ggplot2 package
+library(ggplot2)
+
+# Define the values of beta and corresponding power for alpha_1 = 1
+beta_values <- c(0, 0.1, 0.2, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6)
+power_values_alpha1_1 <- c(0.048,
+                           0.234,
+                           0.752,
+                           0.91,
+                           0.922,
+                           0.928,
+                           0.938,
+                           0.942,
+                           0.946,
+                           0.952
+                           
+)
+
+# Define the values of power for alpha_1 = 0.51
+power_values_alpha1_051 <- c(0.046,
+                             0.174,
+                             0.61,
+                             0.788,
+                             0.828,
+                             0.846,
+                             0.864,
+                             0.87,
+                             0.878,
+                             0.886
+                             
+)
+
+# Define the values of power for alpha_i = 0.1
+power_values_alpha1_01 <- c(0.046,
+                            0.152,
+                            0.504,
+                            0.738,
+                            0.768,
+                            0.794,
+                            0.812,
+                            0.818,
+                            0.836,
+                            0.838
+                            
+)
+
+# Create a data frame for plotting
+data <- data.frame(beta = beta_values, 
+                   power_alpha1_1 = power_values_alpha1_1, 
+                   power_alpha1_051 = power_values_alpha1_051,
+                   power_alpha1_01 = power_values_alpha1_01)
+
+# Plot the power curves
+p <- ggplot(data) +
+  geom_line(aes(x = beta, y = power_alpha1_1, color = "alpha1_1"), size = 1) +  # Line for alpha_1 = 1
+  geom_point(aes(x = beta, y = power_alpha1_1), color = "red", size = 2) +      # Red points for alpha_1 = 1
+  geom_line(aes(x = beta, y = power_alpha1_051, color = "alpha1_051"), size = 1) + # Line for alpha_1 = 0.51
+  geom_point(aes(x = beta, y = power_alpha1_051), color = "red", size = 2) +    # Red points for alpha_1 = 0.51
+  geom_line(aes(x = beta, y = power_alpha1_01, color = "alpha1_01"), size = 1) +  # Line for alpha_1 = 0.1
+  geom_point(aes(x = beta, y = power_alpha1_01), color = "red", size = 2) +     # Red points for alpha_1 = 0.1
+  scale_x_continuous(breaks = beta_values) +                                    # Force all beta coefficients on the x-axis
+  ggtitle(expression("Power Evolution for Different " * alpha[i] * " Values, " * tau[0] * " = 0.8, " * lambda[2]^0 * " = 0.60")) +  # Add a title with Greek letters
+  xlab(expression(" " * beta * " Values")) +                                    # Label the x-axis
+  ylab(expression("Power  " * g[3*","*f,]^{adj})) +                             # Label the y-axis
+  theme_minimal(base_size = 15) +                                               # Apply a minimal theme with larger base text size
+  scale_color_manual(name = expression(alpha[i]),                               # Create a legend with Greek letters
+                     labels = c(expression(alpha[i] == 0.1), 
+                                expression(alpha[i] == 0.51), 
+                                expression(alpha[i] == 1.00)),                  # Main legend for alpha values
+                     values = c("alpha1_1" = "blue", "alpha1_051" = "green", "alpha1_01" = "orange")) +  # Define colors for the lines
+  theme(legend.position = "right",                                              # Place legend on the right
+        plot.title = element_text(hjust = 0.5),                                 # Center align the title
+        legend.text.align = 0,                                                  # Left-align legend text
+        legend.title.align = 0.5)                                               # Center-align legend title
+
+# Manually adding size text to the bottom right corner
+p + annotate("text", x = 0.525, y = 0.05, label = "size = 0.046", color = "orange", hjust = 0, size = 5) +  # for alpha = 0.1
+  annotate("text", x = 0.525, y = 0.1, label = "size = 0.046", color = "green", hjust = 0, size = 5) +   # for alpha = 0.51
+  annotate("text", x = 0.525, y = 0.15, label = "size = 0.048", color = "blue", hjust = 0, size = 5)     # for alpha = 1.00
