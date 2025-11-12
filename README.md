@@ -17,56 +17,56 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 # MATLAB Scripts
 ----------------------------------------------
 # Main Scripts Simulations G1
-- SIMULATIONS_G1.M
-- SIMULATIONS_G1_CSdependentIdio_Garcherrors.M
+- SIMULATIONS_G1.m
+- SIMULATIONS_G1_CSdependentIdio_Garcherrors.m
 
 # Auxiliary Functions G1
-- fact_recursive_hstep_fast.M
-- recursive_hstep_fast.M
-- pred_encompass_dnorm.M
-- NbFactors.M
-- standard.M
-- (armaxfilter_simulate.M)
-- (andrews_lrv.M)
-- (covnw.M)
+- fact_recursive_hstep_fast.m
+- recursive_hstep_fast.m
+- pred_encompass_dnorm.m
+- NbFactors.m
+- standard.m
+- (armaxfilter_simulate.m)
+- (andrews_lrv.m)
+- (covnw.m)
 ---------------------------------------------
 # Main Scripts Simulations G2, G3, G4
-- SIMULATIONS_G2_G3.M
-- SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.M
-- SIMULATIONS_G4.M
-- SIMULATIONS_G4_CSdependentidio_garcherrors.M
+- SIMULATIONS_G2_G3.m
+- SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.m
+- SIMULATIONS_G4.m
+- SIMULATIONS_G4_CSdependentidio_garcherrors.m
   
 # Auxiliary Functions G2, G3, G4
-- fact_recursive_hstep_fast.M
-- recursive_hstep_fast.M
-- Nested_Stats_S0.M
-- Nested_Stats_Sbar.M
-- Nested_Stats_Sbar_g4.M
-- NbFactors.M
-- standard.M
-- (armaxfilter_simulate.M)
-- (covnw.M)
-- (varsim.M)
+- fact_recursive_hstep_fast.m
+- recursive_hstep_fast.m
+- Nested_Stats_S0.m
+- Nested_Stats_Sbar.m
+- Nested_Stats_Sbar_g4.m
+- NbFactors.m
+- standard.m
+- (armaxfilter_simulate.m)
+- (covnw.m)
+- (varsim.m)
 ---------------------------------------------
 # Main Scripts Empirical Application I
-- Application_HCPIQ_AR1.M
-- Application_HCPIQ_AR1_GRANDAVERAGE.M
+- Application_HCPIQ_AR1.m
+- Application_HCPIQ_AR1_GRANDAVERAGE.m
 
 # Main Scripts Empirical Application II
-- Application_FREDMD.M
+- Application_FREDMD.m
   
 # Auxiliary Functions 
-For both Empirical Applications the auxiliary functions are basically the same auxiliary functions within the simulations above for G1,G2,G3,G4 combined. However, some tiny changes are required, e.g., in Application II to impose $\lambda_1^0=0.6$ for G4 within Nested_Stats_Sbar_g4.M. And also, for Empirical Application II a couple of additional auxiliary functions are needed to take care of the usual (stationarity) transformation of FRED-MD (zip file with these have been downloaded from https://www.stlouisfed.org/research/economists/mccracken/fred-databases) plus a couple of others for trying different method of extracting factors. 
+For both Empirical Applications the auxiliary functions are basically the same auxiliary functions within the simulations above for G1,G2,G3,G4 combined. However, some tiny changes are required, e.g., in Application II to impose $\lambda_1^0=0.6$ for G4 within Nested_Stats_Sbar_g4.m. And also, for Empirical Application II a couple of additional auxiliary functions are needed to take care of the usual (stationarity) transformation of FRED-MD (zip file with these have been downloaded from https://www.stlouisfed.org/research/economists/mccracken/fred-databases) plus a couple of others for trying different method of extracting factors. 
 These are:
-- transform_data.M
-- seqa.M
-- remove_outliers.M
-- prepare_missing.M
-- mrsq.M
-- fredfactors.M
-- factors_em.M
-- AH_crit.M
-- ABC_crit.M
+- transform_data.m
+- seqa.m
+- remove_outliers.m
+- prepare_missing.m
+- mrsq.m
+- fredfactors.m
+- factors_em.m
+- AH_crit.m
+- ABC_crit.m
 
 Thus, we recommend downloading the whole folder for each application when replicating it.
 ----------------------------------------------
@@ -108,21 +108,21 @@ We now proceed to explain how to precisely obtain all the tables reported in the
 OA Section 5.2 ("Size and Power Tables"):
 ---------------
 
-- Table 5.1-5.4 are obtained by running the script SIMULATIONS_G1.M and modifying the line 13 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output table -which is also printed to the console- is "mat_T10_k1".
+- Table 5.1-5.4 are obtained by running the script SIMULATIONS_G1.m and modifying the line 13 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output table -which is also printed to the console- is "mat_T10_k1".
 
-- Table 5.5-5.12 are obtained by running the script SIMULATIONS_G2_G3.M and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output tables -which are also printed to the console- are "out_S0_S0adj1" for G2 (and the power enhanced version G2-adj) and "out_Sbar_Sbaradj" fro G3 (and the power enhanced version G3-adj). Note that in the output tables the two versions of the test (G2 and G2-adj) are printed horizontally one contiguous to the other. In the OA Tables we have placed the power-enhanced versions underneath, so they are placed in a vertical fashion for space reasons.
+- Table 5.5-5.12 are obtained by running the script SIMULATIONS_G2_G3.m and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output tables -which are also printed to the console- are "out_S0_S0adj1" for G2 (and the power enhanced version G2-adj) and "out_Sbar_Sbaradj" fro G3 (and the power enhanced version G3-adj). Note that in the output tables the two versions of the test (G2 and G2-adj) are printed horizontally one contiguous to the other. In the OA Tables we have placed the power-enhanced versions underneath, so they are placed in a vertical fashion for space reasons.
   
-- Table 5.13-5.16 are obtained by running the script SIMULATIONS_G4.M and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output table -which is also printed to the console- is "out_Sbar_Sbaradj" for G4 (and the power enhanced version G4-adj). Note that in the output tables the two versions of the test (G4 and G4-adj) are printed horizontally, one contiguous to the other. In the OA Tables we have placed the power-enhanced versions underneath, so they are placed in a vertical fashion for space reasons.
+- Table 5.13-5.16 are obtained by running the script SIMULATIONS_G4.m and modifying the line 20 of the script to accomodate the different homogeneous and heterogeneous loadings: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The final output table -which is also printed to the console- is "out_Sbar_Sbaradj" for G4 (and the power enhanced version G4-adj). Note that in the output tables the two versions of the test (G4 and G4-adj) are printed horizontally, one contiguous to the other. In the OA Tables we have placed the power-enhanced versions underneath, so they are placed in a vertical fashion for space reasons.
 
 
 OA Section 5.3 ("Sensitivity to Smaller Sample Sizes"):
 ---------------
 
-- Table 5.17-5.22 are obtained by running the script SIMULATIONS_G1.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above.
+- Table 5.17-5.22 are obtained by running the script SIMULATIONS_G1.m and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above.
 
-- Table 5.23-5.34 are obtained by running the script SIMULATIONS_G2_G3.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.23-5.34 are obtained by running the script SIMULATIONS_G2_G3.m and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
-- Table 5.35-5.40 are obtained by running the script SIMULATIONS_G4.M and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above. The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.35-5.40 are obtained by running the script SIMULATIONS_G4.m and modifying the values of the cross sectional dimension N and sample size T at line 8-9 as N_vec=[100]; T_vec=[200]; or T_vec=[350]; along with this, the line 13 of the script should be modified to accomodate the different homogeneous and heterogeneous loadings as explained above in Section 5.2. The output table names and displaying are also the same as explained for Section 5.2 above. The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
 
 OA Section 5.3 ("Cross-sectional dependent idiosyncratics and Garch errors for homogeneous and heterogeneous loadings"):
@@ -130,40 +130,40 @@ OA Section 5.3 ("Cross-sectional dependent idiosyncratics and Garch errors for h
 Here Subsection 5.4.1 is about Cross sectional dependent idiosyncratic only, without GARCH effects on the error. 
 This means that for all the scripts below there is a section to be commented out (lines 61-76 for G1 and lines 91-106 for G2,G3,G4) and one to be un-commented out (lines 81-82 for G1 and lines 111-112 for G2,G3,G4). This is clearly commented within the code! 
 
-- Table 5.41-5.44 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above.
+- Table 5.41-5.44 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above.
 
 
-- Table 5.45-5.52 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.45-5.52 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
-- Table 5.53-5.56 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.53-5.56 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
 
 
 Here Subsection 5.4.2 is about Cross sectional dependent idiosyncratic plus GARCH effects on the error. 
 This means that for all the scripts below the same sections commented out to obtain the results in Subsection 5.4.1 above should now be un-commented again, while lines 81-82 for G1 and lines 111-112 for G2,G3,G4 should be commented out. This is clearly commented within the code! 
 
-- Table 5.57-5.60 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above.
+- Table 5.57-5.60 are obtained by running the script SIMULATIONS_G1_CSdependentIdio_Garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above.
 
-- Table 5.61-5.68 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.61-5.68 are obtained by running the script SIMULATIONS_G2_G3_CSdependentIdio_garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
-- Table 5.69-5.72 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.M  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
+- Table 5.69-5.72 are obtained by running the script SIMULATIONS_G4_CSdependentIdio_garcherrors.m  where to accomodate the different homogeneous and heterogeneous loadings one should imput: alpha1 = [1, 1, 1]; or alpha1 = [0.51, 0.51, 0.51]; or alpha1 = [0.1, 0.1, 0.1]; or alpha1 = [0.51, 0.7, 1]; The output table names and displaying are also the same as explained for Section 5.2 above, though note that only the power-enhanced versions (adj) are reported in the OA.
 
 
 
-NOTE: all simulations have been run locally on the authors machine, and the code only contains parloops to parallelize the tasks. The settings with N_vec=[800]; T_vec=[500]; for 500 replications are lengthy, and the main culprit for this lenghty-ness is the time dimension T_vec as the factors are estimated at every roll of the out-of-sample window (recursively). G1 seems a bit slower than G2-G4. On a processor Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz  2.30 GHz with installed RAM of 32 GB, the whole simulation of G1 takes about 3.5-4 hours. Needless to say, to reproduce exactly the results the scripts -and random number generators thereof- should not be modified (e.g., the snippet ensuring reproducible random number generation in parallel loops -line 47-51 for SIMULATIONS_G1.M and similarly everywhere else- should be left as-is!).
+NOTE: all simulations have been run locally on the authors machine, and the code only contains parloops to parallelize the tasks. The settings with N_vec=[800]; T_vec=[500]; for 500 replications are lengthy, and the main culprit for this lenghty-ness is the time dimension T_vec as the factors are estimated at every roll of the out-of-sample window (recursively). G1 seems a bit slower than G2-G4. On a processor Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz  2.30 GHz with installed RAM of 32 GB, the whole simulation of G1 takes about 3.5-4 hours. Needless to say, to reproduce exactly the results the scripts -and random number generators thereof- should not be modified (e.g., the snippet ensuring reproducible random number generation in parallel loops -line 47-51 for SIMULATIONS_G1.m and similarly everywhere else- should be left as-is!).
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Note: for reproducing the Empirical Applications below, download locally the entire folder APPLICATION_I or APPLICATION_II. 
 
 # EMPIRICAL APPLICATION I: Inflation Forecasting
-To reproduce Table 4.1 in the MP, the script to be used is Application_HCPIQ_AR1.M, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
+To reproduce Table 4.1 in the MP, the script to be used is Application_HCPIQ_AR1.m, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
 The code prints to the console the p-values of the four tests G1-G4 for the 23 countries taken into account (note: the name of the table is encompass_Q_stats but it actually contains the p-values not the test statistics).
 
-Similarly, to reproduce Table 6.1 in Section 6 of the OA the script to be used is Application_HCPIQ_AR1_GRANDAVERAGE.M, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
+Similarly, to reproduce Table 6.1 in Section 6 of the OA the script to be used is Application_HCPIQ_AR1_GRANDAVERAGE.m, and the data file employed is WB_HCPI_Q.xlsx (already within the APPLICATION I folder).
 The code prints to the console the p-values of the four tests G1-G4 for the 23 countries taken into account (note: the name of the table is encompass_Q_stats but it actually contains the p-values not the test statistics).
 
 # EMPIRICAL APPLICATION II: FRED-MD Forecasting
-To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.M, and the data file employed is 2024-07.csv (already within the APPLICATION II folder).
+To reproduce Table 4.2 in the MP, the script to be used is Application_FREDMD.m, and the data file employed is 2024-07.csv (already within the APPLICATION II folder).
 To obtain results for the different 14 series is enough to modify line 170: idx = find(strcmp('XXXXX', series)); replacing XXXXX with either UNRATE, CPIAUCSL, DPCERA3M086SBEA, S&P 500, PAYEMS, INDPROTB3SMFFM, HOUST, M1SL, M2SL, OILPRICExGS10, RPI, BUSLOANS.
 The script prints to the console both test statistics and p-values of G1, G2, G3, G4. Table 4.2 in the MP reports only the p-values rounded at the third decimal.
 
