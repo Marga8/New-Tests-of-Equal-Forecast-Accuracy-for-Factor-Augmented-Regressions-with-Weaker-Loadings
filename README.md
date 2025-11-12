@@ -47,6 +47,8 @@ We distinguish between main scripts and auxiliary functions. Some auxiliary func
 - (armaxfilter_simulate.m)
 - (covnw.m)
 - (varsim.m)
+
+NOTE: for G2, G3, G4 to run, it is required that matlab has the Mapping Toolbox, Matlab versions R2013b and later ones should have it by default. 
 ---------------------------------------------
 # Main Scripts Empirical Application I
 - Application_HCPIQ_AR1.m
